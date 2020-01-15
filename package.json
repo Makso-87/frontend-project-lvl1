@@ -4,7 +4,8 @@
   "description": "My first project at Hexlet",
   "main": "index.js",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-games-windows": "dist\\bin\\brain-games.js"
   },
   "files": [
     "dist"
@@ -12,6 +13,7 @@
   "scripts": {
     "test": "test",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "build-windows": "SET NODE_ENV=production & babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -29,5 +31,8 @@
     "@babel/core": "^7.8.0",
     "@babel/node": "^7.8.0",
     "@babel/preset-env": "^7.8.2"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
   }
 }
