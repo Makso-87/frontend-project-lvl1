@@ -4,7 +4,7 @@
   "description": "My first project at Hexlet",
   "main": "index.js",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js",
     "brain-games-windows": "dist\\bin\\brain-games.js"
   },
   "files": [
