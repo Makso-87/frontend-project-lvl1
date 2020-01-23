@@ -1,14 +1,11 @@
 import readlineSync from 'readline-sync';
 import randoNumber from './random-number';
+import greating from './greeting';
+import farewell from './farewell';
 
-const userNameQuestion = () => {
-  const answer = readlineSync.question('Могу я спросить Ваше имя, товарищ?');
-  console.log(`Привет, ${answer}!`);
-};
+const userName = greating('Введите "Да", если число четное, в противном случае введите "Нет".');
 
 const brainEven = () => {
-  const userName = readlineSync.question('Могу я спросить Ваше имя, товарищ? ');
-  console.log(`Привет, ${userName}!`);
   let answersNumber = 0;
 
   while (answersNumber < 3) {
