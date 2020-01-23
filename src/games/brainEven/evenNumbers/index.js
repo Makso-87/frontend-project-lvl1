@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import randomNmber from './randomNmber';
-import { cons } from '../../pairs';
+import { cons } from '../../../pairs';
 
 const evenNummbers = () => {
   const num = randomNmber();
