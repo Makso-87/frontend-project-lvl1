@@ -1,10 +1,3 @@
-import readlineSync from 'readline-sync';
-import randoNumber from './random-number';
-import greating from './greeting';
-import farewell from './farewell';
+import brainEven from './games/brainEven';
 
-const userName = greating('Введите "Да", если число четное, в противном случае введите "Нет".');
-
-
-
-export { brainEven };
+export default brainEven;
