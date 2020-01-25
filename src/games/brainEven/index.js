@@ -1,8 +1,8 @@
-import { get1, get2, get3 } from '../../trinity';
+import { get1, get2, get3 } from '../../modules/trinity';
 import evenNummbers from './evenNumbers';
-import gamesCheck from '../../gamesCheck';
-import greating from '../../greating';
-import farewell from '../../farewell';
+import gamesCheck from '../../modules/gamesCheck';
+import greating from '../../modules/greating';
+import farewell from '../../modules/farewell';
 
 const brainEven = () => {
   const userName = greating('Введите "Да", если число четное, в противном случае введите "Нет".');

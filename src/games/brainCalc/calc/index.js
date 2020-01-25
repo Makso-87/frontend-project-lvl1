@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
-import randomChar from '../../../randomChar';
-import randomNumber from '../../../randomNumber';
-import { cons } from '../../../trinity';
+import randomChar from '../../../modules/randomChar';
+import randomNumber from '../../../modules/randomNumber';
+import { cons } from '../../../modules/trinity';
 
 const calc = () => {
   const num1 = randomNumber();

@@ -1,14 +1,14 @@
 install:
-	npm install
+	sudo npm install
 
 build:
-	npm run build
+	sudo npm run build
 	
 start:
 	npx babel-node src/brain-games.js
 
 publish:
-	npm publish --dry-run
+	sudo npm publish --dry-run
 lint:
 	npx eslint . --fix
 	
