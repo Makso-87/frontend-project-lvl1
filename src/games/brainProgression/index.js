@@ -5,7 +5,7 @@ import greating from '../../modules/greating';
 import farewell from '../../modules/farewell';
 
 const brainProgression = () => {
-  const userName = greating('Вычислите "НОД" - наибольший общий делитель двух чисел.');
+  const userName = greating('Какое число пропущено в арифметической прогрессии?');
   const checkResults = gamesCheck(progression);
   farewell(userName, get1(checkResults), get2(checkResults), get3(checkResults));
 };
