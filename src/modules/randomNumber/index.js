@@ -1,5 +1,6 @@
-const randomNumber = (multupier = 100) => {
-  const num = Math.round(Math.random() * multupier);
+
+const randomNumber = (topLimitOfNumber = 100) => {
+  const num = Math.round(Math.random() * topLimitOfNumber);
   return num;
 };
 

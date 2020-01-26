@@ -5,8 +5,9 @@ import randomProgression from '../../../modules/randomProgression';
 import randomNumber from '../../../modules/randomNumber';
 
 const progression = () => {
-  const startNumber = randomNumber(10);
-  const stepProgression = randomNumber(10);
+  const topLimitOfNumber = 10;
+  const startNumber = randomNumber(topLimitOfNumber);
+  const stepProgression = randomNumber(topLimitOfNumber);
   const progress = randomProgression(startNumber, stepProgression);
   const string = car(progress);
   const correctAnswer = cdr(progress);

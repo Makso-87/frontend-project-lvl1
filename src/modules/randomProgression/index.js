@@ -26,7 +26,7 @@ const randomProgression = (number, step, length) => {
     return string(newAcc, array, counter + 1);
   };
 
-  const result = string('', arr, 0).trim();
+  const result = string('', arr).trim();
   const results = cons(result, replaceableElement);
 
   return results;

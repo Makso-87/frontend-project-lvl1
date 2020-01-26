@@ -4,7 +4,8 @@ import randomNumber from '../../../modules/randomNumber';
 import { cons } from '../../../modules/trinity';
 
 const prime = () => {
-  const number = randomNumber(1000);
+  const topLimitOfNumber = 1000;
+  const number = randomNumber(topLimitOfNumber);
   console.log(`Вопрос: ${number}`);
   const answer = readlineSync.question('Ваш ответ: ');
   let correctAnswer = 'Нет';

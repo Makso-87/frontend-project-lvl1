@@ -1,16 +1,16 @@
 const gcd = (num1, num2) => {
-  let div = 0;
-  let min = false;
+  let divider = 0;
+  let minNumber = false;
   if (num1 > num2) {
-    div = num1 % num2;
-    min = num2;
+    divider = num1 % num2;
+    minNumber = num2;
   } else {
-    div = num2 % num1;
-    min = num1;
+    divider = num2 % num1;
+    minNumber = num1;
   }
-  if (div === 0) return min;
+  if (divider === 0) return minNumber;
 
-  return gcd(div, min);
+  return gcd(divider, minNumber);
 };
 
 export default gcd;

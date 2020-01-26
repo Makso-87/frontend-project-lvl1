@@ -2,14 +2,18 @@
   "name": "frontend-project-lvl1",
   "version": "1.0.0",
   "description": "My first project at Hexlet",
+  "keywords": [
+    "hexlet",
+    "brain-games",
+    "learning-project"
+  ],
   "main": "index.js",
   "bin": {
     "brain-gcd": "dist/bin/brain-gcd.js",
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
     "brain-prime": "dist/bin/brain-prime.js",
-    "brain-progression": "dist/bin/brain-progression.js",
-    "brain-games-windows": "dist\\bin\\brain-games.js"
+    "brain-progression": "dist/bin/brain-progression.js"
   },
   "files": [
     "dist"
@@ -17,8 +21,7 @@
   "scripts": {
     "test": "test",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "build-windows": "SET NODE_ENV=production & babel src --out-dir dist --source-maps inline",
-    "prepublishOnly": "sudo npm run build"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",

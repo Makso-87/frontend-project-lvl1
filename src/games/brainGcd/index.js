@@ -1,8 +1,8 @@
 import { get1, get2, get3 } from '../../modules/trinity';
 import greatestCommonDiviser from './greatestCommonDivider';
-import gamesCheck from '../../modules/gamesCheck';
-import greating from '../../modules/greating';
-import farewell from '../../modules/farewell';
+import gamesCheck from '../../modules/engine/gamesCheck';
+import greating from '../../modules/engine/greating';
+import farewell from '../../modules/engine/farewell';
 
 const brainGcd = () => {
   const userName = greating('Вычислите "НОД" - наибольший общий делитель двух чисел.');
