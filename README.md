@@ -5,10 +5,24 @@
 
 [![Build Status](https://travis-ci.org/Makso-87/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/Makso-87/frontend-project-lvl1)
 
+Примеры игр:
+
+Brain-even
+
 <a href="https://asciinema.org/a/sBs5cfZBQPCmaZ0BhLxrCTnXd" target="_blank"><img src="https://asciinema.org/a/sBs5cfZBQPCmaZ0BhLxrCTnXd.svg" /></a>
+
+Brain-calc
 
 <a href="https://asciinema.org/a/4NtWQ65VOWmiJCObYZ3GlayUe" target="_blank"><img src="https://asciinema.org/a/4NtWQ65VOWmiJCObYZ3GlayUe.svg" /></a>
 
+Brain-gsd
+
 <a href="https://asciinema.org/a/rKGQffAexBrFM3ho6ijuhgWod" target="_blank"><img src="https://asciinema.org/a/rKGQffAexBrFM3ho6ijuhgWod.svg" /></a>
 
+Brain-progression
+
 <a href="https://asciinema.org/a/V7tSXHUwddoRuUICa0xgpXQnU" target="_blank"><img src="https://asciinema.org/a/V7tSXHUwddoRuUICa0xgpXQnU.svg" /></a>
+
+Brain-prime
+
+<a href="https://asciinema.org/a/17ECmIO9RxYZ9m8g7G7W5NLU6" target="_blank"><img src="https://asciinema.org/a/17ECmIO9RxYZ9m8g7G7W5NLU6.svg" /></a>
