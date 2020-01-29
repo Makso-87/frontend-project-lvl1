@@ -4,6 +4,25 @@ import gamesCheck from '../../modules/engine/gamesCheck';
 import greating from '../../modules/engine/greating';
 import farewell from '../../modules/engine/farewell';
 
+const prime = () => {
+  const topLimitOfNumber = 1000;
+  const number = randomNumber(topLimitOfNumber);
+  console.log(`Вопрос: ${number}`);
+  const answer = readlineSync.question('Ваш ответ: ');
+  let correctAnswer = 'Нет';
+  let result = false;
+
+  if (simpleNumber(number)) {
+    correctAnswer = 'Да';
+  }
+
+  if (answer.toUpperCase() === correctAnswer.toUpperCase()) result = true;
+
+  const results = cons(result, answer, correctAnswer);
+
+  return results;
+};
+
 const brainPrime = () => {
   const userName = greating('Является ли число простым?');
   const checkResults = gamesCheck(prime);

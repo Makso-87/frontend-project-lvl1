@@ -1,8 +1,37 @@
 import { get1, get2, get3 } from '../../modules/trinity';
-import calc from './calc';
 import gamesCheck from '../../modules/engine/gamesCheck';
 import greating from '../../modules/engine/greating';
 import farewell from '../../modules/engine/farewell';
+
+
+const calc = () => {
+  const num1 = randomNumber();
+  const num2 = randomNumber();
+  const char = randomChar();
+  let correctAnswer = 0;
+  let result = false;
+
+  switch (char) {
+    case '+':
+      correctAnswer = num1 + num2;
+      break;
+    case '-':
+      correctAnswer = num1 - num2;
+      break;
+    case '*':
+      correctAnswer = num1 * num2;
+      break;
+    default: correctAnswer = 'Результат не известен';
+  }
+
+  console.log(`Вопрос: ${num1} ${char} ${num2}`);
+  const answer = Number(readlineSync.question('Ваш ответ: '));
+
+  if (answer === correctAnswer) result = true;
+
+  const results = cons(result, answer, correctAnswer);
+  return results;
+};
 
 const brainCalc = () => {
   const userName = greating('Каков результат выражения?');
