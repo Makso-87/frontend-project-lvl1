@@ -1,8 +1,8 @@
-import { get1, get2, get3 } from '../../modules/trinity';
-import evenNummbers from './evenNumbers';
-import gamesCheck from '../../modules/engine/gamesCheck';
-import greating from '../../modules/engine/greating';
-import farewell from '../../modules/engine/farewell';
+import readlineSync from 'readline-sync';
+import {
+  get1, get2, get3, randomNumber, consTrinity,
+} from '../../modules';
+import { farewell, greating, gamesCheck } from '../../engine';
 
 const evenNumbers = () => {
   const num = randomNumber();
@@ -31,13 +31,13 @@ const evenNumbers = () => {
     }
   }
 
-  const results = cons(result, answer, correctAnswer);
+  const results = consTrinity(result, answer, correctAnswer);
   return results;
 };
 
 const brainEven = () => {
   const userName = greating('Введите "Да", если число четное, в противном случае введите "Нет".');
-  const checkResults = gamesCheck(evenNummbers);
+  const checkResults = gamesCheck(evenNumbers);
   farewell(userName, get1(checkResults), get2(checkResults), get3(checkResults));
 };
 

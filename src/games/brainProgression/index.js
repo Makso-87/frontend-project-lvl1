@@ -1,8 +1,8 @@
-import { get1, get2, get3 } from '../../modules/trinity';
-import progression from './progression';
-import gamesCheck from '../../modules/engine/gamesCheck';
-import greating from '../../modules/engine/greating';
-import farewell from '../../modules/engine/farewell';
+import readlineSync from 'readline-sync';
+import { farewell, greating, gamesCheck } from '../../engine';
+import {
+  get1, get2, get3, car, cdr, randomNumber, randomProgression, consTrinity,
+} from '../../modules';
 
 const progression = () => {
   const topLimitOfNumber = 10;
@@ -17,7 +17,7 @@ const progression = () => {
 
   if (answer === correctAnswer) result = true;
 
-  const results = cons(result, answer, correctAnswer);
+  const results = consTrinity(result, answer, correctAnswer);
   return results;
 };
 

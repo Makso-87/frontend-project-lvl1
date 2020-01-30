@@ -1,8 +1,8 @@
-import { get1, get2, get3 } from '../../modules/trinity';
-import greatestCommonDiviser from './greatestCommonDivider';
-import gamesCheck from '../../modules/engine/gamesCheck';
-import greating from '../../modules/engine/greating';
-import farewell from '../../modules/engine/farewell';
+import readlineSync from 'readline-sync';
+import { farewell, greating, gamesCheck } from '../../engine';
+import {
+  get1, get2, get3, randomNumber, consTrinity, gcd,
+} from '../../modules';
 
 const greatestCommonDivider = () => {
   const num1 = randomNumber();
@@ -15,13 +15,13 @@ const greatestCommonDivider = () => {
 
   if (answer === correctAnswer) result = true;
 
-  const results = cons(result, answer, correctAnswer);
+  const results = consTrinity(result, answer, correctAnswer);
   return results;
 };
 
 const brainGcd = () => {
   const userName = greating('Вычислите "НОД" - наибольший общий делитель двух чисел.');
-  const checkResults = gamesCheck(greatestCommonDiviser);
+  const checkResults = gamesCheck(greatestCommonDivider);
   farewell(userName, get1(checkResults), get2(checkResults), get3(checkResults));
 };
 

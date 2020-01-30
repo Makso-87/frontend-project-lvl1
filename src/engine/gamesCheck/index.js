@@ -1,6 +1,6 @@
 import {
-  cons, get1, get2, get3,
-} from '../../trinity';
+  get1, get2, get3, consTrinity,
+} from '../../modules';
 
 const gamesCheck = (game) => {
   let answersNumber = 0;
@@ -21,7 +21,7 @@ const gamesCheck = (game) => {
   if (answersNumber === numberOfRounds) rezult = true;
   else rezult = false;
 
-  const gamesResult = cons(rezult, get2(callRezults), get3(callRezults));
+  const gamesResult = consTrinity(rezult, get2(callRezults), get3(callRezults));
   return gamesResult;
 };
 

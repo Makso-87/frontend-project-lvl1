@@ -1,8 +1,8 @@
-import { get1, get2, get3 } from '../../modules/trinity';
-import prime from './prime';
-import gamesCheck from '../../modules/engine/gamesCheck';
-import greating from '../../modules/engine/greating';
-import farewell from '../../modules/engine/farewell';
+import readlineSync from 'readline-sync';
+import { farewell, greating, gamesCheck } from '../../engine';
+import {
+  get1, get2, get3, randomNumber, simpleNumber, consTrinity,
+} from '../../modules';
 
 const prime = () => {
   const topLimitOfNumber = 1000;
@@ -18,7 +18,7 @@ const prime = () => {
 
   if (answer.toUpperCase() === correctAnswer.toUpperCase()) result = true;
 
-  const results = cons(result, answer, correctAnswer);
+  const results = consTrinity(result, answer, correctAnswer);
 
   return results;
 };
