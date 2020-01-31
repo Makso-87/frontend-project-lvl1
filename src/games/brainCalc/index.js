@@ -1,8 +1,6 @@
 import readlineSync from 'readline-sync';
-import { farewell, greating, gamesCheck } from '../../engine';
-import {
-  get1, get2, get3, randomChar, randomNumber, consTrinity,
-} from '../../modules';
+import engine from '../../engine';
+import { randomChar, randomNumber, consTrinity } from '../../modules';
 
 const calc = () => {
   const num1 = randomNumber();
@@ -33,10 +31,10 @@ const calc = () => {
   return results;
 };
 
+const greating = 'Каков результат выражения?';
+
 const brainCalc = () => {
-  const userName = greating('Каков результат выражения?');
-  const checkResults = gamesCheck(calc);
-  farewell(userName, get1(checkResults), get2(checkResults), get3(checkResults));
+  engine(calc, greating);
 };
 
 export default brainCalc;

@@ -1,8 +1,6 @@
 import readlineSync from 'readline-sync';
-import {
-  get1, get2, get3, randomNumber, consTrinity,
-} from '../../modules';
-import { farewell, greating, gamesCheck } from '../../engine';
+import { randomNumber, consTrinity } from '../../modules';
+import engine from '../../engine';
 
 const evenNumbers = () => {
   const num = randomNumber();
@@ -35,10 +33,10 @@ const evenNumbers = () => {
   return results;
 };
 
+const greating = 'Введите "Да", если число четное, в противном случае введите "Нет".';
+
 const brainEven = () => {
-  const userName = greating('Введите "Да", если число четное, в противном случае введите "Нет".');
-  const checkResults = gamesCheck(evenNumbers);
-  farewell(userName, get1(checkResults), get2(checkResults), get3(checkResults));
+  engine(evenNumbers, greating);
 };
 
 export default brainEven;

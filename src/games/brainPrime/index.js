@@ -1,8 +1,6 @@
 import readlineSync from 'readline-sync';
-import { farewell, greating, gamesCheck } from '../../engine';
-import {
-  get1, get2, get3, randomNumber, simpleNumber, consTrinity,
-} from '../../modules';
+import engine from '../../engine';
+import { randomNumber, simpleNumber, consTrinity } from '../../modules';
 
 const prime = () => {
   const topLimitOfNumber = 1000;
@@ -23,10 +21,10 @@ const prime = () => {
   return results;
 };
 
+const greating = 'Является ли число простым?';
+
 const brainPrime = () => {
-  const userName = greating('Является ли число простым?');
-  const checkResults = gamesCheck(prime);
-  farewell(userName, get1(checkResults), get2(checkResults), get3(checkResults));
+  engine(prime, greating);
 };
 
 export default brainPrime;

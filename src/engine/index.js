@@ -48,6 +48,10 @@ const gamesCheck = (game) => {
   return gamesResult;
 };
 
-export {
-  greating, farewell, gamesCheck,
+const engine = (game, greatingString) => {
+  const userName = greating(greatingString);
+  const checkResults = gamesCheck(game);
+  farewell(userName, get1(checkResults), get2(checkResults), get3(checkResults));
 };
+
+export default engine;
