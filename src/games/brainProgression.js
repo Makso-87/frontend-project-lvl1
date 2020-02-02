@@ -3,6 +3,24 @@ import {
   car, cdr, randomNumber, consPair, topLimitOfNumber,
 } from '../modules';
 
+const indexForMissingNumber = (length) => {
+  let num = 0;
+  let check = false;
+
+  do {
+    num = randomNumber();
+    if (num < length) check = true;
+  } while (!check);
+
+  return num;
+};
+
+const string = (acc = '', array, counter = 0) => {
+  if (counter === array.length) return acc;
+  const newAcc = `${acc} ${array[counter]}`;
+  return string(newAcc, array, counter + 1);
+};
+
 // algebProgression
 
 const algebProgression = (acc = [], num = 2, step = 2, length = 10) => {
@@ -16,14 +34,8 @@ const algebProgression = (acc = [], num = 2, step = 2, length = 10) => {
 
 const randomProgression = (number, step, length) => {
   const arr = algebProgression([], number, step, length);
-  let num = 0;
-  let check = false;
   let replaceableElement = 0;
-
-  do {
-    num = randomNumber();
-    if (num < arr.length) check = true;
-  } while (!check);
+  const num = indexForMissingNumber(arr.length);
 
   for (let i = 0; i < arr.length; i += 1) {
     if (i === num) {
@@ -31,12 +43,6 @@ const randomProgression = (number, step, length) => {
       arr[i] = '..';
     }
   }
-
-  const string = (acc = '', array, counter = 0) => {
-    if (counter === array.length) return acc;
-    const newAcc = `${acc} ${array[counter]}`;
-    return string(newAcc, array, counter + 1);
-  };
 
   const result = string('', arr).trim();
   const results = consPair(result, replaceableElement);
@@ -48,9 +54,9 @@ const progression = () => {
   const startNumber = randomNumber(topLimitOfNumber);
   const stepProgression = randomNumber(topLimitOfNumber);
   const progress = randomProgression(startNumber, stepProgression);
-  const string = car(progress);
+  const str = car(progress);
   const correctAnswer = cdr(progress);
-  const question = `${string}`;
+  const question = `${str}`;
 
   const results = consPair(question, String(correctAnswer));
   return results;
