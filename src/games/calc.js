@@ -1,26 +1,18 @@
 import engine from '../engine';
-import { randomNumber, consPair } from '../modules';
+import { getRandomNumber, consPair, chars } from '../modules';
 
 // randomChar
 
-const randomChar = () => {
-  const chars = '+-*';
-  let num = 0;
-  let check = false;
-  const topLimitOfNumber = 10;
-  do {
-    num = Math.floor(Math.random() * topLimitOfNumber);
-    if (num < chars.length) check = true;
-    else check = false;
-  } while (!check);
+const getRandomChar = () => {
+  const num = getRandomNumber(0, 2);
 
   return chars[num];
 };
 
 const calc = () => {
-  const num1 = randomNumber();
-  const num2 = randomNumber();
-  const char = randomChar();
+  const num1 = getRandomNumber(1, 100);
+  const num2 = getRandomNumber(1, 100);
+  const char = getRandomChar();
   let correctAnswer = 0;
 
   switch (char) {

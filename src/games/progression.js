@@ -1,6 +1,6 @@
 import engine from '../engine';
 import {
-  car, cdr, randomNumber, consPair, topLimitOfNumber,
+  car, cdr, getRandomNumber, consPair,
 } from '../modules';
 
 const indexForMissingNumber = (length) => {
@@ -8,32 +8,32 @@ const indexForMissingNumber = (length) => {
   let check = false;
 
   do {
-    num = randomNumber();
+    num = getRandomNumber(1, 100);
     if (num < length) check = true;
   } while (!check);
 
   return num;
 };
 
-const string = (acc = '', array, counter = 0) => {
+const arrToString = (acc = '', array, counter = 0) => {
   if (counter === array.length) return acc;
   const newAcc = `${acc} ${array[counter]}`;
-  return string(newAcc, array, counter + 1);
+  return arrToString(newAcc, array, counter + 1);
 };
 
-// algebProgression
+// getAlgebProgression
 
-const algebProgression = (acc = [], num = 2, step = 2, length = 10) => {
+const getAlgebProgression = (acc = [], num = 2, step = 2, length = 10) => {
   if (length < 0) return acc;
   acc[acc.length] = num;
   const newNum = num + step;
-  return algebProgression(acc, newNum, step, length - 1);
+  return getAlgebProgression(acc, newNum, step, length - 1);
 };
 
-// randomProgression
+// getRandomProgression
 
-const randomProgression = (number, step, length) => {
-  const arr = algebProgression([], number, step, length);
+const getRandomProgression = (number, step, length) => {
+  const arr = getAlgebProgression([], number, step, length);
   let replaceableElement = 0;
   const num = indexForMissingNumber(arr.length);
 
@@ -44,16 +44,16 @@ const randomProgression = (number, step, length) => {
     }
   }
 
-  const result = string('', arr).trim();
+  const result = arrToString('', arr).trim();
   const results = consPair(result, replaceableElement);
 
   return results;
 };
 
 const progression = () => {
-  const startNumber = randomNumber(topLimitOfNumber);
-  const stepProgression = randomNumber(topLimitOfNumber);
-  const progress = randomProgression(startNumber, stepProgression);
+  const startNumber = getRandomNumber(1, 10);
+  const stepProgression = getRandomNumber(1, 10);
+  const progress = getRandomProgression(startNumber, stepProgression);
   const str = car(progress);
   const correctAnswer = cdr(progress);
   const question = `${str}`;

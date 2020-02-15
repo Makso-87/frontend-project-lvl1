@@ -1,4 +1,4 @@
-const topLimitOfNumber = 10;
+const chars = '+-*';
 
 // Pair
 
@@ -14,14 +14,26 @@ const get2 = (trinity) => trinity((x, y) => y);
 const get3 = (trinity) => trinity((x, y, z) => z);
 
 
-// randomNumber
+// getRandomNumber
 
-const randomNumber = (maxNumberRange = 100) => {
-  const num = Math.round(Math.random() * maxNumberRange);
+const getRandomNumber = (minNumberRange, maxNumberRange) => {
+  let num = 0;
+  const order = String(maxNumberRange).length;
+  let multiplier = '1';
+
+  while (multiplier.length <= order) {
+    multiplier += '0';
+  }
+
+  do {
+    num = Math.floor(Math.random() * Number(multiplier));
+  } while (num < minNumberRange || num > maxNumberRange);
+
   return num;
 };
 
 export {
+  chars,
   consPair,
   car,
   cdr,
@@ -29,6 +41,5 @@ export {
   get1,
   get2,
   get3,
-  randomNumber,
-  topLimitOfNumber,
+  getRandomNumber,
 };
