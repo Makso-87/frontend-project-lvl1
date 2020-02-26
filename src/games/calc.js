@@ -1,5 +1,6 @@
+import { cons } from 'hexlet-pairs';
 import engine from '../engine';
-import { getRandomNumber, consPair, chars } from '../modules';
+import { getRandomNumber, chars } from '../modules';
 
 // randomChar
 
@@ -13,7 +14,7 @@ const calc = () => {
   const num1 = getRandomNumber(1, 100);
   const num2 = getRandomNumber(1, 100);
   const char = getRandomChar();
-  let correctAnswer = 0;
+  let correctAnswer;
 
   switch (char) {
     case '+':
@@ -25,19 +26,18 @@ const calc = () => {
     case '*':
       correctAnswer = num1 * num2;
       break;
-    default: correctAnswer = 'Result is undefined';
+    default: return null;
   }
 
   const question = `${num1} ${char} ${num2}`;
 
-  const results = consPair(question, String(correctAnswer));
-  return results;
+  return cons(question, String(correctAnswer));
 };
 
-const greating = 'What is the result of the expression?';
+const greeting = 'What is the result of the expression?';
 
 const brainCalc = () => {
-  engine(calc, greating);
+  engine(calc, greeting);
 };
 
 export default brainCalc;

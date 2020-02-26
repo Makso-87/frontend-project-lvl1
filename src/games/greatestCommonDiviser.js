@@ -22,14 +22,13 @@ const checkGreatestCommonDiviser = () => {
   const correctAnswer = getGreatestCommoDiviser(num1, num2);
   const question = `${num1} ${num2}`;
 
-  const results = consTrinity(question, String(correctAnswer));
-  return results;
+  return consTrinity(question, String(correctAnswer));
 };
 
-const greating = 'Calculate "GSD" - the greatest common divisor of two numbers.';
+const greeting = 'Calculate "GCD" - the greatest common divisor of two numbers.';
 
 const brainGreatestCommoDiviser = () => {
-  engine(checkGreatestCommonDiviser, greating);
+  engine(checkGreatestCommonDiviser, greeting);
 };
 
 export default brainGreatestCommoDiviser;

@@ -1,5 +1,6 @@
+import { cons } from 'hexlet-pairs';
 import engine from '../engine';
-import { getRandomNumber, consPair } from '../modules';
+import { getRandomNumber } from '../modules';
 
 const checkSimpleNumber = (num) => {
   const iteration = (number, counter) => {
@@ -16,21 +17,15 @@ const checkSimpleNumber = (num) => {
 const prime = () => {
   const number = getRandomNumber(1, 1000);
   const question = `${number}`;
-  let correctAnswer = 'no';
+  const correctAnswer = checkSimpleNumber(number) ? 'yes' : 'no';
 
-  if (checkSimpleNumber(number)) {
-    correctAnswer = 'yes';
-  }
-
-  const results = consPair(question, correctAnswer);
-
-  return results;
+  return cons(question, correctAnswer);
 };
 
-const greating = 'The number is simple?';
+const greeting = 'The number is simple?';
 
 const brainPrime = () => {
-  engine(prime, greating);
+  engine(prime, greeting);
 };
 
 export default brainPrime;

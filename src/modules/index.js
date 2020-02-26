@@ -1,11 +1,5 @@
 const chars = '+-*';
 
-// Pair
-
-const consPair = (x, y) => (f) => f(x, y);
-const car = (pair) => pair((x) => x);
-const cdr = (pair) => pair((x, y) => y);
-
 // Trinity
 
 const consTrinity = (a, b, c) => (f) => f(a, b, c);
@@ -34,9 +28,6 @@ const getRandomNumber = (minNumberRange, maxNumberRange) => {
 
 export {
   chars,
-  consPair,
-  car,
-  cdr,
   consTrinity,
   get1,
   get2,
