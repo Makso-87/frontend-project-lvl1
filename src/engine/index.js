@@ -2,7 +2,6 @@ import { car, cdr } from 'hexlet-pairs';
 import readlineSync from 'readline-sync';
 
 const engine = (game, greetingString) => {
-  let rezult = false;
   let answer = false;
   let correctAnswer = false;
   const numberOfRounds = 3;
