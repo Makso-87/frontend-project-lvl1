@@ -1,18 +1,22 @@
-import { cons } from 'hexlet-pairs';
-import engine from '../engine';
-import { getRandomNumber, chars } from '../modules';
+import { cons } from '@hexlet/pairs';
+import runGameEngine from '../engine';
+import getRandomNumber from '../modules';
 
 // randomChar
 
 const getRandomChar = () => {
-  const num = getRandomNumber(0, 2);
+  const lowerLimitNumber = 0;
+  const chars = '+-*';
+  const index = getRandomNumber(lowerLimitNumber, chars.length);
 
-  return chars[num];
+  return chars[index];
 };
 
-const calc = () => {
-  const num1 = getRandomNumber(1, 100);
-  const num2 = getRandomNumber(1, 100);
+const getGameData = () => {
+  const lowerLimitNumber = 1;
+  const topLimitNumber = 100;
+  const num1 = getRandomNumber(lowerLimitNumber, topLimitNumber);
+  const num2 = getRandomNumber(lowerLimitNumber, topLimitNumber);
   const char = getRandomChar();
   let correctAnswer;
 
@@ -34,10 +38,10 @@ const calc = () => {
   return cons(question, String(correctAnswer));
 };
 
-const greeting = 'What is the result of the expression?';
+const gameDescription = 'What is the result of the expression?';
 
-const brainCalc = () => {
-  engine(calc, greeting);
+const runCalcGame = () => {
+  runGameEngine(getGameData, gameDescription);
 };
 
-export default brainCalc;
+export default runCalcGame;

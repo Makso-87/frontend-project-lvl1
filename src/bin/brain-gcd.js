@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import brainGreatestCommoDiviser from '../games/greatestCommonDiviser';
+import runGreatestCommoDiviserGame from '../games/greatestCommonDiviser';
 
-brainGreatestCommoDiviser();
+runGreatestCommoDiviserGame();

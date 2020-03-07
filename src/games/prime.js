@@ -1,6 +1,6 @@
-import { cons } from 'hexlet-pairs';
-import engine from '../engine';
-import { getRandomNumber } from '../modules';
+import { cons } from '@hexlet/pairs';
+import runGameEngine from '../engine';
+import getRandomNumber from '../modules';
 
 const checkSimpleNumber = (num) => {
   const iteration = (number, counter) => {
@@ -14,18 +14,20 @@ const checkSimpleNumber = (num) => {
   return iteration(num, 2);
 };
 
-const prime = () => {
-  const number = getRandomNumber(1, 1000);
-  const question = `${number}`;
+const getGameData = () => {
+  const lowerLimitNumber = 1;
+  const topLimitNumber = 1000;
+  const number = getRandomNumber(lowerLimitNumber, topLimitNumber);
+  const question = number.toString();
   const correctAnswer = checkSimpleNumber(number) ? 'yes' : 'no';
 
   return cons(question, correctAnswer);
 };
 
-const greeting = 'The number is simple?';
+const gameDescription = 'The number is simple?';
 
-const brainPrime = () => {
-  engine(prime, greeting);
+const runPrimeGame = () => {
+  runGameEngine(getGameData, gameDescription);
 };
 
-export default brainPrime;
+export default runPrimeGame;

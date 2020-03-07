@@ -1,18 +1,20 @@
-import { cons } from 'hexlet-pairs';
-import { getRandomNumber } from '../modules';
-import engine from '../engine';
+import { cons } from '@hexlet/pairs';
+import getRandomNumber from '../modules';
+import runGameEngine from '../engine';
 
-const getEvenNumbers = () => {
-  const num = getRandomNumber(1, 100);
+const getGameData = () => {
+  const lowerLimitNumber = 1;
+  const topLimitNumber = 100;
+  const num = getRandomNumber(lowerLimitNumber, topLimitNumber);
   const question = `${num}`;
   const correctAnswer = (num % 2 === 0) ? 'yes' : 'no';
   return cons(question, correctAnswer);
 };
 
-const greeting = 'Enter "yes", if the number is even, otherwise enter "no".';
+const gameDescription = 'Enter "yes", if the number is even, otherwise enter "no".';
 
-const brainEven = () => {
-  engine(getEvenNumbers, greeting);
+const runEvenGame = () => {
+  runGameEngine(getGameData, gameDescription);
 };
 
-export default brainEven;
+export default runEvenGame;

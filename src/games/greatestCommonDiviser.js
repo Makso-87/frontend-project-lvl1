@@ -1,9 +1,10 @@
-import engine from '../engine';
-import { getRandomNumber, consTrinity } from '../modules';
+import { cons } from '@hexlet/pairs';
+import runGameEngine from '../engine';
+import getRandomNumber from '../modules';
 
 const getGreatestCommoDiviser = (num1, num2) => {
   let divider = 0;
-  let minNumber = false;
+  let minNumber = 0;
   if (num1 > num2) {
     divider = num1 % num2;
     minNumber = num2;
@@ -16,19 +17,21 @@ const getGreatestCommoDiviser = (num1, num2) => {
   return getGreatestCommoDiviser(divider, minNumber);
 };
 
-const checkGreatestCommonDiviser = () => {
-  const num1 = getRandomNumber(1, 100);
-  const num2 = getRandomNumber(1, 100);
+const getGameData = () => {
+  const lowerLimitNumber = 1;
+  const topLimitNumber = 100;
+  const num1 = getRandomNumber(lowerLimitNumber, topLimitNumber);
+  const num2 = getRandomNumber(lowerLimitNumber, topLimitNumber);
   const correctAnswer = getGreatestCommoDiviser(num1, num2);
   const question = `${num1} ${num2}`;
 
-  return consTrinity(question, String(correctAnswer));
+  return cons(question, String(correctAnswer));
 };
 
-const greeting = 'Calculate "GCD" - the greatest common divisor of two numbers.';
+const gameDescription = 'Calculate "GCD" - the greatest common divisor of two numbers.';
 
-const brainGreatestCommoDiviser = () => {
-  engine(checkGreatestCommonDiviser, greeting);
+const runGreatestCommoDiviserGame = () => {
+  runGameEngine(getGameData, gameDescription);
 };
 
-export default brainGreatestCommoDiviser;
+export default runGreatestCommoDiviserGame;
