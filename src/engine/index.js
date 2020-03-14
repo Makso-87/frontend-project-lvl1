@@ -15,11 +15,12 @@ const runGameEngine = (game, gameDescription) => {
     const correctAnswer = cdr(callResults);
 
     if (correctAnswer !== answer) {
-      return console.log(`"${answer}" - is not correct :( Correct answer is "${correctAnswer}".\nLet's try again, ${userName}`);
+      console.log(`"${answer}" - is not correct :( Correct answer is "${correctAnswer}".\nLet's try again, ${userName}`);
+      return;
     }
   }
 
-  return console.log('Correct!');
+  console.log('Correct!');
 };
 
 export default runGameEngine;

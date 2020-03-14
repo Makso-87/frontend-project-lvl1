@@ -1,23 +1,22 @@
 import { cons } from '@hexlet/pairs';
 import runGameEngine from '../engine';
-import getRandomNumber from '../modules';
+import getRandomNumber from '../gameslibrary';
+
+const minNumber = 1;
+const maxNumber = 10;
+const minNumberForLostItem = 0;
 
 const getGameData = () => {
-  const lowerLimitNumber = 1;
-  const topLimitNumber = 10;
-  const lowerLimitNumberForLostItem = 0;
-  const topLimitNumberForLostItem = 9;
-  const sequence = [];
-  const start = getRandomNumber(lowerLimitNumber, topLimitNumber);
-  const indexIncrement = getRandomNumber(lowerLimitNumber, topLimitNumber);
-  const indexLostItem = getRandomNumber(lowerLimitNumberForLostItem, topLimitNumberForLostItem);
   const progressionLength = 10;
-  let correctAnswer;
+  const sequence = [];
+  const start = getRandomNumber(minNumber, maxNumber);
+  const indexIncrement = getRandomNumber(minNumber, maxNumber);
+  const indexLostItem = getRandomNumber(minNumberForLostItem, progressionLength - 1);
+  const correctAnswer = String(start + indexLostItem * indexIncrement);
 
   for (let i = 0; i < progressionLength; i += 1) {
     if (i === indexLostItem) {
       sequence[i] = '..';
-      correctAnswer = start + i * indexIncrement;
     } else {
       sequence[i] = start + i * indexIncrement;
     }
@@ -25,10 +24,10 @@ const getGameData = () => {
 
   const question = sequence.join(' ');
 
-  return cons(question, String(correctAnswer));
+  return cons(question, correctAnswer);
 };
 
-const gameDescription = 'What number is missing in the arithmetic progression?';
+const gameDescription = 'What number is missing in the progression?';
 
 const runProgressionGame = () => {
   runGameEngine(getGameData, gameDescription);

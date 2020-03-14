@@ -1,34 +1,36 @@
 import { cons } from '@hexlet/pairs';
 import runGameEngine from '../engine';
-import getRandomNumber from '../modules';
+import getRandomNumber from '../gameslibrary';
+
+const minNumber = 1;
+const maxNumber = 100;
 
 const getGreatestCommoDiviser = (num1, num2) => {
   let divider = 0;
-  let minNumber = 0;
+  let min = 0;
+
   if (num1 > num2) {
     divider = num1 % num2;
-    minNumber = num2;
+    min = num2;
   } else {
     divider = num2 % num1;
-    minNumber = num1;
+    min = num1;
   }
-  if (divider === 0) return minNumber;
+  if (divider === 0) return min;
 
-  return getGreatestCommoDiviser(divider, minNumber);
+  return getGreatestCommoDiviser(divider, min);
 };
 
 const getGameData = () => {
-  const lowerLimitNumber = 1;
-  const topLimitNumber = 100;
-  const num1 = getRandomNumber(lowerLimitNumber, topLimitNumber);
-  const num2 = getRandomNumber(lowerLimitNumber, topLimitNumber);
-  const correctAnswer = getGreatestCommoDiviser(num1, num2);
+  const num1 = getRandomNumber(minNumber, maxNumber);
+  const num2 = getRandomNumber(minNumber, maxNumber);
+  const correctAnswer = String(getGreatestCommoDiviser(num1, num2));
   const question = `${num1} ${num2}`;
 
-  return cons(question, String(correctAnswer));
+  return cons(question, correctAnswer);
 };
 
-const gameDescription = 'Calculate "GCD" - the greatest common divisor of two numbers.';
+const gameDescription = 'Find the greatest common divisor of given numbers.';
 
 const runGreatestCommoDiviserGame = () => {
   runGameEngine(getGameData, gameDescription);

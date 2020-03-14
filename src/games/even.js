@@ -1,17 +1,18 @@
 import { cons } from '@hexlet/pairs';
-import getRandomNumber from '../modules';
+import getRandomNumber from '../gameslibrary';
 import runGameEngine from '../engine';
 
+const minNumber = 1;
+const maxNumber = 100;
+
 const getGameData = () => {
-  const lowerLimitNumber = 1;
-  const topLimitNumber = 100;
-  const num = getRandomNumber(lowerLimitNumber, topLimitNumber);
-  const question = `${num}`;
+  const num = getRandomNumber(minNumber, maxNumber);
+  const question = String(num);
   const correctAnswer = (num % 2 === 0) ? 'yes' : 'no';
   return cons(question, correctAnswer);
 };
 
-const gameDescription = 'Enter "yes", if the number is even, otherwise enter "no".';
+const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const runEvenGame = () => {
   runGameEngine(getGameData, gameDescription);

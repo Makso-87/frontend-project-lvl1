@@ -1,41 +1,40 @@
 import { cons } from '@hexlet/pairs';
 import runGameEngine from '../engine';
-import getRandomNumber from '../modules';
+import getRandomNumber from '../gameslibrary';
 
-// randomChar
+const minNumber = 1;
+const maxNumber = 100;
+const minNumberForOperator = 0;
 
-const getRandomChar = () => {
-  const lowerLimitNumber = 0;
-  const chars = '+-*';
-  const index = getRandomNumber(lowerLimitNumber, chars.length);
+const getRandomOperator = () => {
+  const operators = '+-*';
+  const index = getRandomNumber(minNumberForOperator, operators.length - 1);
 
-  return chars[index];
+  return operators[index];
 };
 
 const getGameData = () => {
-  const lowerLimitNumber = 1;
-  const topLimitNumber = 100;
-  const num1 = getRandomNumber(lowerLimitNumber, topLimitNumber);
-  const num2 = getRandomNumber(lowerLimitNumber, topLimitNumber);
-  const char = getRandomChar();
+  const num1 = getRandomNumber(minNumber, maxNumber);
+  const num2 = getRandomNumber(minNumber, maxNumber);
+  const operator = getRandomOperator();
   let correctAnswer;
 
-  switch (char) {
+  switch (operator) {
     case '+':
-      correctAnswer = num1 + num2;
+      correctAnswer = String(num1 + num2);
       break;
     case '-':
-      correctAnswer = num1 - num2;
+      correctAnswer = String(num1 - num2);
       break;
     case '*':
-      correctAnswer = num1 * num2;
+      correctAnswer = String(num1 * num2);
       break;
     default: return null;
   }
 
-  const question = `${num1} ${char} ${num2}`;
+  const question = `${num1} ${operator} ${num2}`;
 
-  return cons(question, String(correctAnswer));
+  return cons(question, correctAnswer);
 };
 
 const gameDescription = 'What is the result of the expression?';
