@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import runGameEngine from '../engine';
-import getRandomNumber from '../gameslibrary';
+import getRandomNumber from '../utils';
 
 const minNumber = 1;
 const maxNumber = 100;
@@ -21,20 +21,20 @@ const getGameData = () => {
 
   switch (operator) {
     case '+':
-      correctAnswer = String(num1 + num2);
+      correctAnswer = num1 + num2;
       break;
     case '-':
-      correctAnswer = String(num1 - num2);
+      correctAnswer = num1 - num2;
       break;
     case '*':
-      correctAnswer = String(num1 * num2);
+      correctAnswer = num1 * num2;
       break;
     default: return null;
   }
 
   const question = `${num1} ${operator} ${num2}`;
 
-  return cons(question, correctAnswer);
+  return cons(question, String(correctAnswer));
 };
 
 const gameDescription = 'What is the result of the expression?';

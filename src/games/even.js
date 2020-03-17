@@ -1,5 +1,5 @@
 import { cons } from '@hexlet/pairs';
-import getRandomNumber from '../gameslibrary';
+import getRandomNumber from '../utils';
 import runGameEngine from '../engine';
 
 const minNumber = 1;

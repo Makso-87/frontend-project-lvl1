@@ -1,11 +1,11 @@
 import { cons } from '@hexlet/pairs';
 import runGameEngine from '../engine';
-import getRandomNumber from '../gameslibrary';
+import getRandomNumber from '../utils';
 
 const minNumber = 1;
 const maxNumber = 1000;
 
-const isPrimeNumber = (num) => {
+const isPrime = (num) => {
   const iteration = (number, counter) => {
     if (number % counter === 0) {
       if (number === counter) return true;
@@ -20,7 +20,7 @@ const isPrimeNumber = (num) => {
 const getGameData = () => {
   const number = getRandomNumber(minNumber, maxNumber);
   const question = String(number);
-  const correctAnswer = isPrimeNumber(number) ? 'yes' : 'no';
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
 
   return cons(question, correctAnswer);
 };
